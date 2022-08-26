@@ -1,3 +1,148 @@
-body {
-    background-color: rgb(204, 212, 212);
+/* CSS RESET */
+:root {
+  --white: #fffbfb;
+  --grey: #f0eef1;
+  --button-grey: #c8c8c8;
+  --black: #050505;
+  --red: #ff7070;
+  --light-green: #9fff9c;
+  --light-red: #ff9c9c;
+  --border-radius: 8px;
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --spacing-xl: 40px;
+  --container-width: 1200px;
+  --shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+*,
+*::before,
+*::after {
+padding: 0;
+margin: 0;
+}
+
+html {
+position: relative;
+min-height: 100vh;
+font-family: 'Poppins', sans-serif;
+}
+
+body {
+background-color: var(--grey);
+color: var(--black);
+font-size: 18px;
+font-weight: 500;
+word-wrap: break-word;
+margin-bottom: 100px;
+}
+
+button,
+input {
+border: none;
+color: inherit;
+font-family: inherit;
+font-size: inherit;
+font-weight: inherit;
+cursor: pointer;
+outline: none;
+}
+
+input[type='text'],
+input[type='number'] {
+cursor: text;
+}
+
+/* HEADER */
+
+.header {
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 4vh;
+}
+
+.header h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* ADD BOOK BUTTON */
+
+.add {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5vh;
+}
+
+.add p {
+  font-size: 1.6rem;
+  padding: 12px;
+  font-weight: 800;
+  border-radius: 6px;
+  transition: ease 0.25s;
+}
+
+.add p:hover {
+  background: var(--button-grey);
+  letter-spacing: .8px;
+}
+
+
+/* MODAL */
+
+.modal-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh; 
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s opacity 0.5s; 
+}
+
+.bg-activate{
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  background-color: var(--grey);
+  border-radius: 15px;
+  padding: 13px 19px;
+  height: 45vh;
+  width: 14%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal input {
+  padding: 13px 10px;
+  border-radius: 7px;
+  font-size: 18px;
+}
+
+.modal button {
+  padding: 10px 30px;
+  background-color: var(--light-green);
+  color:black;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
