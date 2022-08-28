@@ -74,6 +74,10 @@ const closeAllModals = () => {
   closeAccountModal()
 }
 
+const handleKeyboardInput = (e) => {
+  if (e.key === 'Escape') closeAllModals()
+}
+
 const updateBooksGrid = () => {
   resetBooksGrid()
   for (let book of library.books) {
