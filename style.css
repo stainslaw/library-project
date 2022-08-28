@@ -74,7 +74,6 @@ input[type='number'] {
 
 .btn:hover {
   filter: brightness(90%);
-  background: linear-gradient(135deg, rgba(45, 109, 141, 0.8) 0%, rgba(87, 202, 133, 0.8) 100%);
 }
 
 .btn-add {
@@ -174,7 +173,7 @@ input[type='number'] {
   z-index: 1;
   top: 50%;
   left: 50%;
-  width: 350px;
+  width: 360px;
   height: 490px;
   padding: var(--spacing-lg);
   border-radius: var(--border-radius);
