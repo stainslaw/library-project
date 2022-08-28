@@ -1,37 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wanderer's Library</title>
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  </head>
+
+  <body>
 
     <header class="header">
-        <div class="container">
-          <h1>Wanderer's Library</h1>
+      <div class="container">
+        <h1>Wanderer's Library</h1>
+        <nav>
+          <div class="logged-in" id="loggedIn">
+            <button class="btn" id="accountBtn"></button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main container">
+        <div class="border-line">
+            <button class="btn btn-add" id="addBookBtn"><p>+ Add Book</p></button>
+            <div class="books-grid" id="booksGrid"></div>
         </div>
-      </header>
+    </main>
 
-    <div class="add">
-        <button id="add-book">
-            <p>+ Add Book To List</p>
-        </button>
-    </div>
-
-    <div class="modal-bg">
-        <div class="modal">
-            <h2>Add a new book</h2>
-                <input type="text" name="title" placeholder="Book Title">
-                <input type="text" name="author" placeholder="Author">
-                <input type="text" name="page" placeholder="Pages">
-                <button>Submit Book</button>
-        </div>
-    </div>
-
+    <footer class="footer">
+      <p>
+        stainslaw ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+      </p>
+      <a href="https://github.com/stainslaw" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+    </footer>
     
-</body>
+    <div class="modal" id="addBookModal">
+      <form class="add-book-form" id="addBookForm">
+        <h3>Add new book</h3>
+        <input
+          class="input"
+          type="text"
+          id="title"
+          placeholder="Title"
+          required
+          maxlength="100"
+        />
+        <p class="error-msg" id="errorMsg"></p>
+        <input
+          class="input"
+          type="text"
+          id="author"
+          placeholder="Author"
+          required
+          maxlength="100"
+        />
+        <input
+          class="input"
+          type="number"
+          id="pages"
+          placeholder="Number of Pages"
+          required
+          max="10000"
+        />
+        <div class="is-read">
+          <label for="is-read">Have you read this book?</label>
+          <input class="checkbox" type="checkbox" id="isRead" />
+        </div>
+        <button class="btn btn-light-green" type="submit">Submit Book</button>
+        <button class="btn btn-light-red" type="reset">Reset</button>
+      </form>
+    </div>
+    <div class="modal" id="accountModal"></div>
+    <div class="overlay" id="overlay"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: 'AIzaSyBv30hELJ-tYN-kLoFFsWmD9az7TNqMNec',
+        authDomain: 'library-ba067.firebaseapp.com',
+        projectId: 'library-ba067',
+        storageBucket: 'library-ba067.appspot.com',
+        messagingSenderId: '915404085981',
+        appId: '1:915404085981:web:c5a384ca4340b4b7e39934',
+      }
+      firebase.initializeApp(firebaseConfig)
+    </script>
+    
+  </body>
 </html>
